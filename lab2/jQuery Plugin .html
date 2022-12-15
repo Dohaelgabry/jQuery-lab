@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Box Animator</title>
+    <style type="text/css">
+      div{
+        background-color: darkgoldenrod;
+        width:300px ;
+        
+      }
+      .p1{
+            font-size: 30px;
+            color: aliceblue;
+       }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+      
+        $("#btn1").click(function () {
+
+          $.fn.addbaCkcolor = function (options) {
+          
+          var settings = $.extend(
+            {
+              backgroundColor: "bisque",
+              color: "brown",
+
+            },options);
+
+            
+
+          return this.css({
+           
+            backgroundColor:settings.backgroundColor,
+            color:settings.color,
+
+          });
+
+          
+        };
+
+
+          $(".p1").addbaCkcolor({"backgroundColor":"aqua"})
+
+        });
+
+
+      });
+ 
+
+ 
+
+
+
+
+
+    </script>
+  </head>
+  <body>
+    <button id="btn1">click for chinge</button>
+    <div>
+     <p class="p1">Doha Gamal Elgabry</p> 
+    </div>
+  </body>
+</html>

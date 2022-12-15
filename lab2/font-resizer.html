@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Font Resizer</title>
+    <style type="text/css">
+      
+
+      body {
+        margin: 200px auto;
+        text-align: center;
+        vertical-align: middle;
+      }
+      div {
+        text-align: center;
+        display: inline-block;
+      }
+      p {
+        font-size: 20px;
+      }
+
+      button {
+        padding: 10px 20px 10px 20px;
+      }
+      .error1,.error2 {
+        color: red;
+      }
+      
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $("#increase").click(function () {
+          $(".content").animate({ fontSize: "+=10px" });
+          console.log($(".content").css("fontSize"));
+
+          if ($(".content").css("fontSize") == "100px") {
+            $(".content").stop();
+            $(".error1").text("you have reach the max size");
+          }
+        });
+
+        $("#decrease").click(function () {
+          $(".content").animate({ fontSize: "-=10px" });
+          if ($(".content").css("fontSize") == "10px") {
+            $(".content").stop();
+            $(".error2").text("you have reach the min size");
+          }
+          $(".error1").hide();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p class="content">Hello, Open Sourcians</p>
+    <button id="decrease">-</button>
+    <button id="increase">+</button>
+    <br />
+    <p class="error1"></p>
+    <p class="error2"></p>
+  </body>
+</html>
